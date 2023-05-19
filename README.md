@@ -30,5 +30,5 @@ After the image is built, you can run it as a container using the following comm
 
 This command runs the container from the "my-web-server" image and maps port 3000 from the container to port 3000 on your local machine. You can access the web server by visiting http://localhost:3000 in your browser.
 
-And that's it. YAny changes made to your application code will be reflected immediately when you rebuild and run the container.
+And that's it. Any changes made to your application code will be reflected immediately when you rebuild and run the container.
 
