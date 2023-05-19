@@ -2,32 +2,33 @@
 
 Creating a web server with docker
 
-## 1. Installing Apache
+## 1. Set Up Your Environment https://www.docker.com
 
-The first step is to Install Apache on your server using your operating system's package manager. For example, on Ubuntu, you can use the following command:
+Ensure that Docker is installed and running on your machine. You can download and install Docker from the [official Docker website](https://www.docker.com) based on your operating system.
 
-- `sudo apt-get update`
 
-- `sudo apt-get install apache2`
+## 2. Create a Dockerfile
+Create a file named "Dockerfile" (without any file extensions) in your project directory. The Dockerfile defines the instructions to build your Docker image.
 
-## 2. Create a Web Page
+Here's an [example](https://github.com/Aphellirus/Webserver-using-Docker/blob/main/dockerfile) Dockerfile for a simple Node.js web server.
 
-Create a HTML file that will be served by the web server. For example, create a file called index.html in the Apache document root directory /var/www/html with [this content](https://github.com/Aphellirus/Apache_basic_server/blob/main/index.html) 
 
-## 3. Start the Apache service
+## 3. Build the Docker Image
 
-Start the Apache service using the following command:
-- `sudo systemctl start apache2`
+In the terminal, navigate to your project directory and run the following command to build the Docker image:
 
-## 4. Configure Apache
+- `docker build -t my-web-server .`
 
-By default, Apache should be configured to serve files from the /var/www/html directory. If you need to change the document root directory, you can do so in the Apache configuration file located at /etc/apache2/apache2.conf.
+This command builds an image named "my-web-server" using the Dockerfile in the current directory. The dot (.) represents the build context.
 
-## 5. Test the web server
 
-Open a web browser and navigate to the IP address of your server. You should see the "Welcome to my web server!" message from your index.html file.
+## 4. Run the Docker Container
 
-## Results
+After the image is built, you can run it as a container using the following command:
 
-You now have a basic web server up and running using Apache. From here, you can customize the Apache configuration to suit your needs, add additional web pages and applications, and implement security best practices to protect your web server.
+- `docker run -p 3000:3000 my-web-server`
+
+This command runs the container from the "my-web-server" image and maps port 3000 from the container to port 3000 on your local machine. You can access the web server by visiting http://localhost:3000 in your browser.
+
+And that's it. YAny changes made to your application code will be reflected immediately when you rebuild and run the container.
 
