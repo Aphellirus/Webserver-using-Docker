@@ -2,7 +2,7 @@
 
 Creating a web server with docker
 
-## 1. Set Up Your Environment https://www.docker.com
+## 1. Set Up Your Environment 
 
 Ensure that Docker is installed and running on your machine. You can download and install Docker from the [official Docker website](https://www.docker.com) based on your operating system.
 
